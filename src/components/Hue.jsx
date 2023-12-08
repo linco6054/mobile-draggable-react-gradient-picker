@@ -60,7 +60,7 @@ const Hue = () => {
       <div
         style={{
           left: isNaN(left) || left > squareSize ? 0 : left,
-          top: handleTop,
+          top: -3,
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
