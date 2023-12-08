@@ -1,0 +1,86 @@
+{
+  "name": "react-best-gradient-color-picker",
+  "version": "2.3.4",
+  "description": "An easy to use color/gradient picker for React.js",
+  "source": "src/index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.module.js",
+  "esmodule": "lib/index.esmodule.js",
+  "umd:main": "lib/index.umd.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "umd": "./lib/index.umd.js",
+      "import": "./lib/index.module.js",
+      "require": "./lib/index.js",
+      "default": "./lib/index.module.js"
+    }
+  },
+  "scripts": {
+    "build": "del-cli 'lib/*' && microbundle --entry src/index.js --jsx React.createElement --jsxFragment React.Fragment --name react-best-gradient-color-picker --tsconfig tsconfig.build.json",
+    "prepublishOnly": "npm run build",
+    "check-release": "npm publish --dry-run",
+    "release": "npm publish"
+  },
+  "files": [
+    "lib/*.{js,mjs,ts,map}",
+    "lib/components/*.ts",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxf31891/react-gradient-color-picker.git"
+  },
+  "keywords": [
+    "gradient",
+    "react",
+    "color",
+    "picker",
+    "react.js",
+    "tool",
+    "editor"
+  ],
+  "author": {
+    "name": "Harry Fox",
+    "email": "hxfox1@gmail.com"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.3.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.4",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-react": "^7.16.7",
+    "@types/jest": "^29.0.0",
+    "cpy-cli": "^3.1.1",
+    "del-cli": "^3.0.1",
+    "eslint": "8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-react": "^7.31.8",
+    "microbundle": "0.13.0",
+    "ts-jest": "^28.0.8"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hxf31891/react-gradient-color-picker/issues"
+  },
+  "homepage": "https://gradient-package-demo.web.app/",
+  "publishConfig": {
+    "@hxf31891:registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "lodash.throttle": "^4.1.1",
+    "tinycolor2": "1.4.2"
+  }
+}
