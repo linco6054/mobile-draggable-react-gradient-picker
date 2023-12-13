@@ -81,6 +81,7 @@ function MyApp() {
 | Name                 | Type      | Default                                               | Description                                                                                               |
 | -------------------- | --------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | value                | `string`  | 'rgba(175, 51, 242, 1)'                               | The starting color                                                                                        |
+| addPointOnClick      | `boolean` | `false`                                               | Add gradient point on click in gradient bar color                                                         |
 | width                | `int`     | 294                                                   | (optional) The width of the picker                                                                        |
 | height               | `int`     | 294                                                   | (optional) The height of the picker                                                                       |
 | hideInputs           | `boolean` | `false`                                               | (optional) hide the hex and rgba inputs                                                                   |
