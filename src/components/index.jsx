@@ -27,17 +27,18 @@ export function ColorPicker({
   height = 294,
   style = {},
   className,
+  addPointOnClick,
 }) {
   const contRef = useRef(null)
-  const [bounds, setBounds] = useState({});
-  const safeValue = objectToString(value);
+  const [bounds, setBounds] = useState({})
+  const safeValue = objectToString(value)
 
   document
-  .getElementsByTagName("head")[0]
-  .insertAdjacentHTML(
-    "beforeend",
-    '<link rel="stylesheet" href="https://prod-api.outsyde.app/packagestyles.css" />'
-  );
+    .getElementsByTagName('head')[0]
+    .insertAdjacentHTML(
+      'beforeend',
+      '<link rel="stylesheet" href="https://prod-api.outsyde.app/packagestyles.css" />'
+    )
 
   useEffect(() => {
     setBounds(contRef?.current?.getBoundingClientRect())
@@ -54,6 +55,7 @@ export function ColorPicker({
         hideOpacity={hideOpacity}
       >
         <Picker
+          addPointOnClick={addPointOnClick}
           hideControls={hideControls}
           hideInputs={hideInputs}
           hidePresets={hidePresets}

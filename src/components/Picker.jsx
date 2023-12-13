@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Hue from './Hue'
 import Inputs from './Inputs'
 import Square from './Square'
@@ -25,6 +25,7 @@ const Picker = ({
   hideGradientStop,
   hideGradientControls,
   locales,
+  addPointOnClick,
 }) => {
   const { isGradient } = usePicker()
 
@@ -45,7 +46,7 @@ const Picker = ({
           locales={locales}
         />
       )}
-      {isGradient && <GradientBar />}
+      {isGradient && <GradientBar addPointOnClick={addPointOnClick} />}
       {!hideHue && <Hue />}
       {!hideOpacity && <Opacity />}
       {!hideInputs && <Inputs />}
@@ -54,4 +55,4 @@ const Picker = ({
   )
 }
 
-export default Picker
+export default memo(Picker)

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { getHandleValue, getHandleValueTouch } from '../utils/utils'
 import { usePicker } from '../context'
 const dragName = 'GradientBar'
-const GradientBar = () => {
+const GradientBar = ({ addPointOnClick }) => {
   const {
     currentColor,
     addPoint,
@@ -45,7 +45,7 @@ const GradientBar = () => {
   }
   const handleDown = (e) => {
     if (dragging !== dragName) {
-      // addPoint(e)
+      addPointOnClick && addPoint(e)
       setDragging(dragName)
     }
   }

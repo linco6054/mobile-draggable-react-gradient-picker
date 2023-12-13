@@ -6,13 +6,6 @@ const Hue = () => {
   const barRef = useRef(null)
   const { handleHue, internalHue, squareSize, dragging, setDragging } =
     usePicker()
-  const [handleTop, setHandleTop] = useState(2)
-
-  usePaintHue(barRef, squareSize)
-
-  useEffect(() => {
-    setHandleTop(barRef?.current?.offsetTop - 2)
-  }, [barRef])
 
   const handleInteraction = useCallback(
     (e) => {
