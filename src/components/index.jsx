@@ -27,7 +27,7 @@ export function ColorPicker({
   height = 294,
   style = {},
   className,
-  addPointOnClick = false,
+  addPointOnClick,
 }) {
   const contRef = useRef(null)
   const [bounds, setBounds] = useState({})
@@ -37,7 +37,7 @@ export function ColorPicker({
     .getElementsByTagName('head')[0]
     .insertAdjacentHTML(
       'beforeend',
-      '<link rel="stylesheet" href="https://gradient-package-demo.web.app/packagestyles.css" />'
+      '<link rel="stylesheet" href="../css/style.css" />'
     )
 
   useEffect(() => {

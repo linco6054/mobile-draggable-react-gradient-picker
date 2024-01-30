@@ -57,6 +57,14 @@ const Hue = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          border: '2px solid white',
+          borderRadius: '50%',
+          boxShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)',
+          width: '18px',
+          height: '18px',
+          zIndex: 1000,
+          transition: 'all 10ms linear',
+          position: 'absolute',
         }}
         onMouseDown={() => setDragging(dragName)}
         onTouchStart={() => setDragging(dragName)}

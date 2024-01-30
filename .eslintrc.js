@@ -12,5 +12,6 @@ module.exports = {
   plugins: ['react'],
   rules: {
     'react/prop-types': 0, // TODO: Remove this when TypeScript is up
+    'prettier/prettier': 'off', // Disable the specific Prettier rule
   },
 }
