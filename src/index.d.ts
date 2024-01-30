@@ -83,6 +83,7 @@ export interface ColorPickerHook {
   gradientType: GradientObject['gradientType']
   degrees: GradientObject['degrees']
   currentLeft: number | undefined
+  addPointOnClick?: boolean
 }
 export declare function useColorPicker(
   value: string,
