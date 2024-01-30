@@ -27,7 +27,7 @@ export function ColorPicker({
   height = 294,
   style = {},
   className,
-  addPointOnClick,
+  addPointOnClick = false,
 }) {
   const contRef = useRef(null)
   const [bounds, setBounds] = useState({})

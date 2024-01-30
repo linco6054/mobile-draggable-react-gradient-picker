@@ -20,7 +20,7 @@ declare function ColorPicker({
   height,
   style,
   className,
-  addPointOnClick = false,
+  addPointOnClick,
 }: {
   value?: string
   onChange?: (value: string) => void
