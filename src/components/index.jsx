@@ -3,6 +3,7 @@ import PickerContextWrapper from '../context'
 import Picker from './Picker'
 import { defaultLocales } from '../constants'
 import { objectToString } from '../utils/utils'
+import '../css/style.css'
 
 export function ColorPicker({
   value = 'rgba(175, 51, 242, 1)',
