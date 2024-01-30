@@ -6,7 +6,7 @@ const Hue = () => {
   const barRef = useRef(null)
   const { handleHue, internalHue, squareSize, dragging, setDragging } =
     usePicker()
-
+  usePaintHue(barRef, squareSize)
   const handleInteraction = useCallback(
     (e) => {
       if (dragging === dragName || e.type === 'click') {
@@ -45,6 +45,7 @@ const Hue = () => {
         marginTop: 17,
         marginBottom: 4,
         touchAction: 'none',
+        position: 'relative',
       }}
       onMouseMove={handleInteraction}
       onTouchMove={handleInteraction}
