@@ -1,6 +1,6 @@
 {
   "name": "react-best-gradient-color-picker-mobile-draggable",
-  "version": "2.3.8",
+  "version": "2.3.9",
   "description": "An easy to use color/gradient picker for React.js",
   "source": "src/index.js",
   "main": "lib/index.js",
