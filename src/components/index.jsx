@@ -37,7 +37,7 @@ export function ColorPicker({
     .getElementsByTagName('head')[0]
     .insertAdjacentHTML(
       'beforeend',
-      '<link rel="stylesheet" href="https://prod-api.outsyde.app/packagestyles.css" />'
+      '<link rel="stylesheet" href="https://gradient-package-demo.web.app/packagestyles.css" />'
     )
 
   useEffect(() => {
