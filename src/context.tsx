@@ -322,5 +322,5 @@ export type PickerContextProps = {
   setSelectedColor: (arg0: number) => void
   internalOnChange: (arg0: string) => void
   previousGraidents: string[]
-  createGradientStr: (arg0: any) => string
+  createGradientStr: (arg0: GradientProps[]) => void
 }

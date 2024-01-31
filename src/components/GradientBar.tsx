@@ -150,7 +150,7 @@ const GradientBar = () => {
       return currentDistance < closestDistance ? current : closest
     }, colors[0])
     closestLeft.left = clickedAt
-    createGradientStr(newColors)
+    createGradientStr(newColors as any)
   }
   return (
     <div
