@@ -29,12 +29,6 @@ body {
   cursor: crosshair;
 }
 
-/* export const canvasWrapper = {
-  borderRadius: 6,
-  overflow: 'hidden',
-  height: 294,
-} */
-
 .rbgcp-control-btn {
   padding-left: 8px;
   padding-right: 8px;
@@ -167,15 +161,21 @@ body {
     ),
     white;
   background-repeat: repeat, repeat;
-  background-position: 0px 0, 7px 7px;
+  background-position:
+    0px 0,
+    7px 7px;
   webkittransformorigin: 0 0 0;
   transform-origin: 0 0 0;
   webkitbackgroundorigin: padding-box, padding-box;
   background-origin: padding-box, padding-box;
   webkitbackgroundclip: border-box, border-box;
   background-clip: border-box, border-box;
-  webkitbackgroundsize: 14px 14px, 14px 14px;
-  background-size: 14px 14px, 14px 14px;
+  webkitbackgroundsize:
+    14px 14px,
+    14px 14px;
+  background-size:
+    14px 14px,
+    14px 14px;
   webkitboxshadow: none;
   box-shadow: none;
   text-shadow: none;

@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { SlidersIcon, InputsIcon, PaletteIcon } from './icon'
-import { usePicker } from '../context'
-import EyeDropper from './EyeDropper'
-import { config } from '../constants'
-import AdvancedControls from './AdvancedControls'
-import ComparibleColors from './ComparibleColors'
-import GradientControls, { DegreePicker } from './GradientControls'
+import { SlidersIcon, InputsIcon, PaletteIcon } from './icon.js'
+import { usePicker } from '../context.js'
+import EyeDropper from './EyeDropper.js'
+import { config } from '../constants.js'
+import AdvancedControls from './AdvancedControls.js'
+import ComparibleColors from './ComparibleColors.js'
+import GradientControls, { DegreePicker } from './GradientControls.js'
+import { LocalesProps } from '../shared/types.js'
 
 var { defaultColor, defaultGradient } = config
 
@@ -20,6 +21,17 @@ const Controls = ({
   hideGradientType,
   hideGradientAngle,
   hideGradientStop,
+}: {
+  locales?: LocalesProps
+  hideEyeDrop?: boolean
+  hideAdvancedSliders?: boolean
+  hideColorGuide?: boolean
+  hideInputType?: boolean
+  hideColorTypeBtns?: boolean
+  hideGradientControls?: boolean
+  hideGradientType?: boolean
+  hideGradientAngle?: boolean
+  hideGradientStop?: boolean
 }) => {
   const {
     isGradient,
@@ -73,6 +85,7 @@ const Controls = ({
             setSolid={setSolid}
             locales={locales}
           />
+
           {!allRightControlsHidden && (
             <div
               style={{ display: noTools ? 'none' : '' }}
@@ -90,7 +103,6 @@ const Controls = ({
                   <EyeDropper onSelect={handleChange} />
                 </div>
               )}
-
               <div
                 style={{ display: hideAdvancedSliders ? 'none' : 'flex' }}
                 id="rbgcp-advanced-btn"
@@ -148,7 +160,13 @@ const Controls = ({
 
 export default Controls
 
-const InputTypeDropdown = ({ openInputType, setOpenInputType }) => {
+const InputTypeDropdown = ({
+  openInputType,
+  setOpenInputType,
+}: {
+  openInputType?: boolean
+  setOpenInputType: (arg0: boolean) => void
+}) => {
   const { inputType, setInputType } = usePicker()
   const vTrans = openInputType
     ? 'visibility 0ms linear'
@@ -160,7 +178,7 @@ const InputTypeDropdown = ({ openInputType, setOpenInputType }) => {
     ? 'opacity 120ms linear'
     : 'opacity 150ms linear 50ms'
 
-  const handleInputType = (e, val) => {
+  const handleInputType = (e: any, val: string) => {
     if (openInputType) {
       e.stopPropagation()
       setInputType(val)
@@ -220,6 +238,12 @@ const ColorTypeBtns = ({
   setSolid,
   setGradient,
   locales,
+}: {
+  hideColorTypeBtns?: boolean
+  isGradient?: boolean
+  setSolid: () => void
+  setGradient: () => void
+  locales?: LocalesProps
 }) => {
   if (hideColorTypeBtns) {
     return <div style={{ width: 1 }} />
@@ -249,7 +273,7 @@ const ColorTypeBtns = ({
   }
 }
 
-export const controlBtnStyles = (selected) => {
+export const controlBtnStyles = (selected: boolean) => {
   return {
     background: selected ? 'white' : 'rgba(255,255,255,0)',
     color: selected ? '#568CF5' : '',

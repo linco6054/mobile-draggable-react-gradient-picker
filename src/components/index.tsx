@@ -1,9 +1,34 @@
 import React, { useRef, useState, useEffect } from 'react'
-import PickerContextWrapper from '../context'
-import Picker from './Picker'
-import { defaultLocales } from '../constants'
-import { objectToString } from '../utils/utils'
-import '../css/style.css'
+import PickerContextWrapper from '../context.js'
+import Picker from './Picker.js'
+import { LocalesProps } from '../shared/types.js'
+import { defaultLocales } from '../constants.js'
+import { objectToString } from '../utils/utils.js'
+
+type ColorPickerProps = {
+  value?: string
+  onChange: (value: string) => void
+  hideControls?: boolean
+  hideInputs?: boolean
+  hideOpacity?: boolean
+  hidePresets?: boolean
+  hideHue?: boolean
+  presets?: string[]
+  hideEyeDrop?: boolean
+  hideAdvancedSliders?: boolean
+  hideColorGuide?: boolean
+  hideInputType?: boolean
+  hideColorTypeBtns?: boolean
+  hideGradientType?: boolean
+  hideGradientAngle?: boolean
+  hideGradientStop?: boolean
+  hideGradientControls?: boolean
+  width?: number
+  height?: number
+  style?: {}
+  className?: any
+  locales?: LocalesProps
+}
 
 export function ColorPicker({
   value = 'rgba(175, 51, 242, 1)',
@@ -28,21 +53,22 @@ export function ColorPicker({
   height = 294,
   style = {},
   className,
-  addPointOnClick,
-}) {
-  const contRef = useRef(null)
+}: ColorPickerProps) {
+  const contRef = useRef<HTMLDivElement>(null)
   const [bounds, setBounds] = useState({})
   const safeValue = objectToString(value)
 
   document
-    .getElementsByTagName('head')[0]
-    .insertAdjacentHTML(
+    ?.getElementsByTagName('head')[0]
+    ?.insertAdjacentHTML(
       'beforeend',
-      '<link rel="stylesheet" href="../css/style.css" />'
+      '<link rel="stylesheet" href="https://gradient-package-demo.web.app/packagestyles.css" />'
     )
 
   useEffect(() => {
-    setBounds(contRef?.current?.getBoundingClientRect())
+    if (contRef && contRef?.current) {
+      setBounds(contRef?.current?.getBoundingClientRect())
+    }
   }, [])
 
   return (
@@ -56,7 +82,6 @@ export function ColorPicker({
         hideOpacity={hideOpacity}
       >
         <Picker
-          addPointOnClick={addPointOnClick}
           hideControls={hideControls}
           hideInputs={hideInputs}
           hidePresets={hidePresets}
